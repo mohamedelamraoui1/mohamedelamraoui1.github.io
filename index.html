@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohamed El Amraoui — Portfolio IA & Data Science</title>
+  <meta name="description" content="Portfolio de Mohamed El Amraoui — Ingénieur IA & Data Science, diplômé MSc. Disponible pour emploi ET doctorat en IA à partir d'août 2026." />
+  <meta name="keywords" content="Mohamed El Amraoui, Data Science, AI, Machine Learning, Portfolio, Maroc, PhD, Doctorat" />
+  <meta name="author" content="Mohamed El Amraoui" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mohamed El Amraoui — Portfolio IA & Data Science" />
+  <meta property="og:description" content="Ingénieur IA & Data Science. Diplômé MSc. Ouvert aux jobs ET au doctorat en IA. Disponible août 2026." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mohamedelamraoui.dev" />
+  <meta property="og:image" content="assets/og-image.png" />
+
+  <!-- Google Fonts (updated dynamically for AR/FR/EN) -->
+  <link id="google-fonts" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;600;700;800&display=swap" />
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Google Analytics placeholder — replace G-XXXXXXXXXX with your ID -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════ PRELOADER -->
+<div id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo">MEA</div>
+    <div class="preloader-bar"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ TOAST -->
+<div id="toast"></div>
+
+<!-- ══════════════════════════════════════════════════════ NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Mohamed El Amraoui</a>
+
+    <ul id="nav-menu">
+      <li><a href="#about"        class="nav-link" data-i18n="nav_about">À propos</a></li>
+      <li><a href="#experience"   class="nav-link" data-i18n="nav_experience">Expérience</a></li>
+      <li><a href="#projects"     class="nav-link" data-i18n="nav_projects">Projets</a></li>
+      <li><a href="#certificates" class="nav-link" data-i18n="nav_certificates">Certifications</a></li>
+      <li><a href="#skills"       class="nav-link" data-i18n="nav_skills">Compétences</a></li>
+      <li><a href="#community"    class="nav-link" data-i18n="nav_community">Communauté</a></li>
+      <li><a href="#contact"      class="nav-link" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
+      <button id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════ HERO -->
+<section id="hero">
+  <canvas id="particles-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-text">
+
+      <!-- Badges -->
+      <div class="hero-badges">
+        <span class="badge badge-available">
+          <span class="dot"></span>
+          <span data-i18n="hero_available_full">Disponible août 2026 — Jobs & Doctorat</span>
+        </span>
+        <span class="badge badge-live">
+          <i class="fas fa-building"></i>
+          <span data-i18n="hero_currently_at">Actuellement chez Capgemini</span>
+        </span>
+      </div>
+
+      <h1 class="hero-name" data-i18n="hero_name">Mohamed El Amraoui</h1>
+
+      <!-- Typing animation -->
+      <div class="hero-role">
+        <span id="typed-role"></span>
+        <span class="cursor"></span>
+      </div>
+
+      <p id="hero-desc" class="hero-desc" data-i18n="hero_desc">
+        Diplômé MSc Data Science &amp; IA — Ouvert aux opportunités d'emploi ET aux positions de doctorat en IA
+      </p>
+
+      <!-- CTA buttons -->
+      <div class="hero-cta">
+        <button id="cv-download-btn" class="btn btn-primary">
+          <i class="fas fa-download"></i>
+          <span data-i18n="btn_cv">Télécharger CV</span>
+        </button>
+        <a href="#contact" class="btn btn-outline">
+          <i class="fas fa-envelope"></i>
+          <span data-i18n="btn_contact">Me Contacter</span>
+        </a>
+      </div>
+
+      <!-- Social icons -->
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/el-amraoui-mohamed/" target="_blank" rel="noopener"
+           class="social-link" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/mohamedelamraoui1" target="_blank" rel="noopener"
+           class="social-link" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://wa.me/212608105946" target="_blank" rel="noopener"
+           class="social-link whatsapp" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://www.freelancer.com/u/mohamedelamra" target="_blank" rel="noopener"
+           class="social-link freelancer" aria-label="Freelancer">
+          <i class="fas fa-briefcase"></i>
+        </a>
+        <a href="mailto:mohamedelamrawi@yahoo.com" class="social-link" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="tel:+212608105946" class="social-link" aria-label="Phone">
+          <i class="fas fa-phone"></i>
+        </a>
+      </div>
+
+    </div><!-- /hero-text -->
+
+    <!-- Profile photo -->
+    <div class="hero-visual fade-in">
+      <div class="avatar-ring">
+        <div class="avatar-inner">
+          <img
+            src="assets/me.webp"
+            alt="Mohamed El Amraoui"
+            class="avatar-photo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <span class="avatar-placeholder" style="display:none;">ME</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /hero-content -->
+</section>
+
+<!-- ══════════════════════════════════════════════════════ ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="about_title">À Propos</h2>
+    <div class="about-grid">
+
+      <div class="slide-left">
+        <p class="about-bio" data-i18n="about_bio">
+          Je suis Mohamed El Amraoui, ingénieur en Data Science et Intelligence Artificielle,
+          diplômé d'un Master en Data Science &amp; IA. Passionné par l'IA générative,
+          les systèmes multi-agents et le machine learning, j'ai acquis une expérience solide
+          à travers des stages chez Capgemini Engineering, Mosaic Mind Solutions et le CHU Hassan II.
+          Je suis ouvert à la fois à des opportunités d'emploi en Data Science &amp; IA et
+          à des positions de doctorat en recherche IA.
+        </p>
+        <div class="highlights">
+          <div class="highlight-card slide-up">
+            <div class="highlight-icon"><i class="fas fa-graduation-cap"></i></div>
+            <h4 data-i18n="about_highlight1_title">Diplômé M2</h4>
+            <p data-i18n="about_highlight1_desc">Master en Data Science &amp; IA</p>
+          </div>
+          <div class="highlight-card slide-up">
+            <div class="highlight-icon"><i class="fas fa-brain"></i></div>
+            <h4 data-i18n="about_highlight2_title">Ingénieur IA</h4>
+            <p data-i18n="about_highlight2_desc">Expérience en IA générative &amp; ML</p>
+          </div>
+          <div class="highlight-card slide-up" style="grid-column:span 2;">
+            <div class="highlight-icon"><i class="fas fa-rocket"></i></div>
+            <h4 data-i18n="about_highlight3_title">Ouvert à</h4>
+            <p data-i18n="about_highlight3_desc">Emploi &amp; Doctorat en IA</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile JSON block -->
+      <div class="slide-right" style="display:flex;align-items:center;justify-content:center;">
+        <div style="width:100%;max-width:380px;">
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
+            <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:10px;font-family:monospace;">profile.json</div>
+            <div style="font-family:monospace;font-size:0.82rem;color:var(--text-secondary);line-height:2.1;">
+              <span style="color:#60a5fa;">"name"</span>: <span style="color:#34d399;">"Mohamed El Amraoui"</span>,<br/>
+              <span style="color:#60a5fa;">"degree"</span>: <span style="color:#34d399;">"MSc Data Science &amp; AI"</span>,<br/>
+              <span style="color:#60a5fa;">"location"</span>: <span style="color:#34d399;">"Morocco 🇲🇦"</span>,<br/>
+              <span style="color:#60a5fa;">"languages"</span>: [<span style="color:#34d399;">"FR"</span>, <span style="color:#34d399;">"EN"</span>, <span style="color:#34d399;">"AR"</span>],<br/>
+              <span style="color:#60a5fa;">"passion"</span>: <span style="color:#34d399;">"Generative AI"</span>,<br/>
+              <span style="color:#60a5fa;">"open_to"</span>: <span style="color:#a78bfa;">"Jobs &amp; PhD"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="exp_title">Expérience</h2>
+    <div class="timeline">
+
+      <!-- Capgemini -->
+      <div class="timeline-item slide-left">
+        <div class="exp-header">
+          <div class="exp-role" data-i18n="exp1_role">Stagiaire Développeur IA</div>
+          <div class="exp-company" data-i18n="exp1_company">Capgemini Engineering</div>
+        </div>
+        <div class="exp-meta">
+          <span><i class="fas fa-calendar-alt"></i> <span data-i18n="exp1_date">Mars 2026 – Présent</span></span>
+          <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="exp1_location">Casablanca, Maroc</span></span>
+        </div>
+        <ul class="exp-achievements">
+          <li data-i18n="exp1_ach1">GeoAI desktop app pour l'analyse des tolérances ISO-GPS et des empilements</li>
+          <li data-i18n="exp1_ach2">Détection automatisée des interférences de montabilité entre pièces d'assemblage</li>
+        </ul>
+        <div class="tech-stack">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">FastAPI</span>
+          <span class="tech-badge">Generative AI</span>
+          <span class="tech-badge">STEP files</span>
+          <span class="tech-badge">PDF Analysis</span>
+        </div>
+      </div>
+
+      <!-- Mosaic Mind -->
+      <div class="timeline-item slide-right">
+        <div class="exp-header">
+          <div class="exp-role" data-i18n="exp2_role">Stagiaire Développeur IA</div>
+          <div class="exp-company" data-i18n="exp2_company">Mosaic Mind Solutions</div>
+        </div>
+        <div class="exp-meta">
+          <span><i class="fas fa-calendar-alt"></i> <span data-i18n="exp2_date">Juillet – Septembre 2025</span></span>
+          <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="exp2_location">Rabat, Maroc</span></span>
+        </div>
+        <ul class="exp-achievements">
+          <li data-i18n="exp2_ach1">Plateforme de tourisme multi-agent IA avec expériences de voyage personnalisées</li>
+          <li data-i18n="exp2_ach2">Routage intelligent basé sur MCP et intégration multi-LLM</li>
+        </ul>
+        <div class="tech-stack">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">FastAPI</span>
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">Flutter</span>
+          <span class="tech-badge">OpenAI</span>
+          <span class="tech-badge">MCP</span>
+        </div>
+      </div>
+
+      <!-- CHU Hassan II -->
+      <div class="timeline-item slide-left">
+        <div class="exp-header">
+          <div class="exp-role" data-i18n="exp3_role">Développeur Full Stack</div>
+          <div class="exp-company" data-i18n="exp3_company">CHU Hassan II</div>
+        </div>
+        <div class="exp-meta">
+          <span><i class="fas fa-calendar-alt"></i> <span data-i18n="exp3_date">Avril – Juin 2024</span></span>
+          <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="exp3_location">Fès, Maroc</span></span>
+        </div>
+        <ul class="exp-achievements">
+          <li data-i18n="exp3_ach1">Application web de gestion des plannings de garde remplaçant les méthodes manuelles</li>
+          <li data-i18n="exp3_ach2">Système d'authentification RBAC sécurisé</li>
+        </ul>
+        <div class="tech-stack">
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">Vite</span>
+          <span class="tech-badge">Tailwind</span>
+          <span class="tech-badge">Spring Boot</span>
+          <span class="tech-badge">Spring Security</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="proj_title">Projets</h2>
+    <div class="projects-grid">
+
+      <div class="project-card fade-in">
+        <div class="project-icon"><i class="fas fa-robot"></i></div>
+        <h3 data-i18n="proj1_name">AIMAAK — Chatbot Darija</h3>
+        <p data-i18n="proj1_desc">Application mobile de chatbot en dialecte marocain Darija. Développée pour le concours Injaz Al-Maghrib.</p>
+        <div class="tech-stack">
+          <span class="tech-badge">Flutter</span>
+          <span class="tech-badge">AI</span>
+          <span class="tech-badge">NLP</span>
+          <span class="tech-badge">Darija</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/mohamedelamraoui1" target="_blank" rel="noopener" class="btn-github">
+            <i class="fab fa-github"></i> <span data-i18n="btn_github">Voir sur GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
+        <h3 data-i18n="proj2_name">Prédiction du Diabète ML</h3>
+        <p data-i18n="proj2_desc">Modèle de prédiction du diabète sur 100K enregistrements avec une précision de 97,2% en utilisant Random Forest.</p>
+        <div class="tech-stack">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Scikit-learn</span>
+          <span class="tech-badge">Random Forest</span>
+          <span class="tech-badge">97.2%</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/mohamedelamraoui1" target="_blank" rel="noopener" class="btn-github">
+            <i class="fab fa-github"></i> <span data-i18n="btn_github">Voir sur GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="project-icon"><i class="fas fa-chart-pie"></i></div>
+        <h3 data-i18n="proj3_name">Segmentation Clients Bancaires</h3>
+        <p data-i18n="proj3_desc">Segmentation des clients bancaires par clustering K-Means pour l'analyse comportementale.</p>
+        <div class="tech-stack">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Pandas</span>
+          <span class="tech-badge">K-Means</span>
+          <span class="tech-badge">Scikit-learn</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://github.com/mohamedelamraoui1" target="_blank" rel="noopener" class="btn-github">
+            <i class="fab fa-github"></i> <span data-i18n="btn_github">Voir sur GitHub</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ CERTIFICATES -->
+<section id="certificates">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="certificates_title">Certifications &amp; Formations</h2>
+    <div class="cert-grid">
+
+      <!-- 1 Extending AI Agent Skills -->
+      <div class="cert-card fade-in">
+        <div class="cert-icon ai"><i class="fas fa-robot"></i></div>
+        <div class="cert-body">
+          <div class="cert-name" data-i18n="cert1_name">Extending AI with Agent Skills</div>
+          <div class="cert-issuer" data-i18n="cert1_issuer">Udemy</div>
+          <span class="cert-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="cert1_date">Mai 2026</span></span>
+        </div>
+      </div>
+
+      <!-- 2 AIDE'2025 -->
+      <div class="cert-card fade-in">
+        <div class="cert-icon ai"><i class="fas fa-brain"></i></div>
+        <div class="cert-body">
+          <div class="cert-name" data-i18n="cert2_name">Autumn School on AI — AIDE'2025</div>
+          <div class="cert-issuer" data-i18n="cert2_issuer">FST Fès</div>
+          <span class="cert-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="cert2_date">Octobre 2025</span></span>
+        </div>
+      </div>
+
+      <!-- 3 SkillUP-Aero Prize -->
+      <div class="cert-card fade-in">
+        <div class="cert-icon award"><i class="fas fa-trophy"></i></div>
+        <div class="cert-body">
+          <div class="cert-name" data-i18n="cert3_name">1er Prix — SkillUP-Aero Competition</div>
+          <div class="cert-issuer" data-i18n="cert3_issuer">EMAN Aerospace</div>
+          <span class="cert-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="cert3_date">Juin 2025</span></span>
+        </div>
+      </div>
+
+      <!-- 4 Data Mining Python -->
+      <div class="cert-card fade-in">
+        <div class="cert-icon data"><i class="fas fa-chart-bar"></i></div>
+        <div class="cert-body">
+          <div class="cert-name" data-i18n="cert4_name">Data Mining with Python Workshop</div>
+          <div class="cert-issuer" data-i18n="cert4_issuer">University of Limerick &amp; FST Fès</div>
+          <span class="cert-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="cert4_date">Février 2025</span></span>
+        </div>
+      </div>
+
+      <!-- 5 Oracle Cloud -->
+      <div class="cert-card fade-in">
+        <div class="cert-icon cloud"><i class="fas fa-cloud"></i></div>
+        <div class="cert-body">
+          <div class="cert-name" data-i18n="cert5_name">Oracle Cloud Infrastructure 2024 — AI Foundations</div>
+          <div class="cert-issuer" data-i18n="cert5_issuer">Oracle</div>
+          <span class="cert-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="cert5_date">Janvier 2025</span></span>
+        </div>
+      </div>
+
+      <!-- 6 R Programming -->
+      <div class="cert-card fade-in">
+        <div class="cert-icon code"><i class="fas fa-code"></i></div>
+        <div class="cert-body">
+          <div class="cert-name" data-i18n="cert6_name">Data Science: R Programming Complete Diploma</div>
+          <div class="cert-issuer" data-i18n="cert6_issuer">Udemy</div>
+          <span class="cert-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="cert6_date">Janvier 2025</span></span>
+        </div>
+      </div>
+
+      <!-- 7 INJAZ Innovation Camp -->
+      <div class="cert-card fade-in">
+        <div class="cert-icon biz"><i class="fas fa-lightbulb"></i></div>
+        <div class="cert-body">
+          <div class="cert-name" data-i18n="cert7_name">INJAZ Innovation Camp</div>
+          <div class="cert-issuer" data-i18n="cert7_issuer">SOTHERMA &amp; INJAZ Al Maghrib</div>
+          <span class="cert-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="cert7_date">Janvier 2025</span></span>
+        </div>
+      </div>
+
+      <!-- 8 Git & GitHub -->
+      <div class="cert-card fade-in">
+        <div class="cert-icon tools"><i class="fas fa-code-branch"></i></div>
+        <div class="cert-body">
+          <div class="cert-name" data-i18n="cert8_name">Git and GitHub Certificate</div>
+          <div class="cert-issuer" data-i18n="cert8_issuer">365 Data Science</div>
+          <span class="cert-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="cert8_date">Novembre 2024</span></span>
+        </div>
+      </div>
+
+      <!-- 9 HCP -->
+      <div class="cert-card fade-in">
+        <div class="cert-icon tools"><i class="fas fa-certificate"></i></div>
+        <div class="cert-body">
+          <div class="cert-name" data-i18n="cert9_name">Attestation de Formation en ligne</div>
+          <div class="cert-issuer" data-i18n="cert9_issuer">Haut-Commissariat au Plan (HCP)</div>
+          <span class="cert-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="cert9_date">Août 2024</span></span>
+        </div>
+      </div>
+
+      <!-- 10 INJAZ Company Program -->
+      <div class="cert-card fade-in">
+        <div class="cert-icon biz"><i class="fas fa-building"></i></div>
+        <div class="cert-body">
+          <div class="cert-name" data-i18n="cert10_name">INJAZ Al Maghrib — Company Program</div>
+          <div class="cert-issuer" data-i18n="cert10_issuer">INJAZ Al Maghrib</div>
+          <span class="cert-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="cert10_date">2024 – 2025</span></span>
+        </div>
+      </div>
+
+      <!-- 11 Entrepreneuriat -->
+      <div class="cert-card fade-in">
+        <div class="cert-icon biz"><i class="fas fa-graduation-cap"></i></div>
+        <div class="cert-body">
+          <div class="cert-name" data-i18n="cert11_name">Formation en Entrepreneuriat</div>
+          <div class="cert-issuer" data-i18n="cert11_issuer">INJAZ Al Maghrib</div>
+          <span class="cert-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="cert11_date">Juin 2024</span></span>
+        </div>
+      </div>
+
+      <!-- 12 Adobe Premiere -->
+      <div class="cert-card fade-in">
+        <div class="cert-icon art"><i class="fas fa-video"></i></div>
+        <div class="cert-body">
+          <div class="cert-name" data-i18n="cert12_name">Adobe Premiere Pro CC — Intermediate</div>
+          <div class="cert-issuer" data-i18n="cert12_issuer">Udemy</div>
+          <span class="cert-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="cert12_date">Décembre 2022</span></span>
+        </div>
+      </div>
+
+      <!-- 13 Adobe Photoshop -->
+      <div class="cert-card fade-in">
+        <div class="cert-icon art"><i class="fas fa-palette"></i></div>
+        <div class="cert-body">
+          <div class="cert-name" data-i18n="cert13_name">Adobe Photoshop CC — Professional</div>
+          <div class="cert-issuer" data-i18n="cert13_issuer">Udemy</div>
+          <span class="cert-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="cert13_date">2022</span></span>
+        </div>
+      </div>
+
+      <!-- 14 Digital Content Creation -->
+      <div class="cert-card fade-in">
+        <div class="cert-icon art"><i class="fas fa-pen-nib"></i></div>
+        <div class="cert-body">
+          <div class="cert-name" data-i18n="cert14_name">Création de Contenu Digital</div>
+          <div class="cert-issuer" data-i18n="cert14_issuer">Forsa</div>
+          <span class="cert-date"><i class="fas fa-calendar-alt"></i> <span data-i18n="cert14_date">Septembre 2021</span></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ SKILLS -->
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="skills_title">Compétences</h2>
+    <div class="skills-grid">
+
+      <div class="skill-category fade-in">
+        <h3><i class="fas fa-code"></i> <span data-i18n="skill_prog">Programmation</span></h3>
+        <div class="skill-item">
+          <div class="skill-label"><span>Python</span><span>95%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>JavaScript</span><span>80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Java</span><span>75%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>R</span><span>70%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-level="70"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>C/C++ · Dart · PHP · SQL</span><span>65%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-level="65"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-category fade-in">
+        <h3><i class="fas fa-brain"></i> <span data-i18n="skill_ai">IA &amp; Machine Learning</span></h3>
+        <div class="skill-item">
+          <div class="skill-label"><span>Scikit-learn</span><span>90%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>LangChain · RAG</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Prompt Engineering</span><span>88%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-level="88"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>PyTorch / TensorFlow</span><span>75%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-category fade-in">
+        <h3><i class="fas fa-laptop-code"></i> <span data-i18n="skill_web">Web &amp; Mobile</span></h3>
+        <div class="icon-grid">
+          <span class="icon-chip">React</span>
+          <span class="icon-chip">FastAPI</span>
+          <span class="icon-chip">Spring Boot</span>
+          <span class="icon-chip">Flutter</span>
+          <span class="icon-chip">Tailwind CSS</span>
+          <span class="icon-chip">HTML/CSS</span>
+          <span class="icon-chip">TypeScript</span>
+          <span class="icon-chip">Vite</span>
+        </div>
+      </div>
+
+      <div class="skill-category fade-in">
+        <h3><i class="fas fa-database"></i> <span data-i18n="skill_data">Ingénierie des Données</span></h3>
+        <div class="skill-item">
+          <div class="skill-label"><span>Pandas / NumPy</span><span>92%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-level="92"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Apache Spark</span><span>65%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-level="65"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Hadoop</span><span>60%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-level="60"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-category fade-in">
+        <h3><i class="fas fa-server"></i> <span data-i18n="skill_db">Bases de Données</span></h3>
+        <div class="icon-grid">
+          <span class="icon-chip">MySQL</span>
+          <span class="icon-chip">PostgreSQL</span>
+          <span class="icon-chip">MongoDB</span>
+          <span class="icon-chip">Redis</span>
+          <span class="icon-chip">Neo4j</span>
+          <span class="icon-chip">ChromaDB</span>
+        </div>
+      </div>
+
+      <div class="skill-category fade-in">
+        <h3><i class="fas fa-tools"></i> <span data-i18n="skill_devops">DevOps &amp; Outils</span></h3>
+        <div class="icon-grid">
+          <span class="icon-chip">Docker</span>
+          <span class="icon-chip">Kubernetes</span>
+          <span class="icon-chip">Git</span>
+          <span class="icon-chip">GitHub</span>
+          <span class="icon-chip">Linux</span>
+        </div>
+      </div>
+
+      <div class="skill-category fade-in">
+        <h3><i class="fas fa-shield-alt"></i> <span data-i18n="skill_security">Sécurité</span></h3>
+        <div class="icon-grid">
+          <span class="icon-chip">AES</span>
+          <span class="icon-chip">RSA</span>
+          <span class="icon-chip">JWT</span>
+          <span class="icon-chip">OAuth</span>
+          <span class="icon-chip">Signatures numériques</span>
+        </div>
+      </div>
+
+      <div class="skill-category fade-in">
+        <h3><i class="fas fa-project-diagram"></i> <span data-i18n="skill_methods">Méthodes</span></h3>
+        <div class="icon-grid">
+          <span class="icon-chip">Scrum</span>
+          <span class="icon-chip">Kanban</span>
+          <span class="icon-chip">UML</span>
+          <span class="icon-chip">Agile</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ COMMUNITY -->
+<section id="community">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="community_title">Communauté &amp; Projets Personnels</h2>
+    <p class="community-subtitle-text fade-in" data-i18n="community_subtitle">
+      Projets, startups et communautés auxquels je contribue activement
+    </p>
+    <div class="community-grid">
+
+      <!-- Webeht -->
+      <div class="community-card fade-in">
+        <div class="community-header">
+          <img src="assets/webeht-logo.png" alt="Webeht"
+            class="community-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="community-logo-fallback" style="display:none;"><i class="fas fa-globe"></i></div>
+          <div class="community-header-text">
+            <h3 data-i18n="community1_name">Webeht</h3>
+          </div>
+        </div>
+        <p data-i18n="community1_desc">
+          Agence web construite avec des amis, proposant des services de développement web moderne et innovant.
+        </p>
+        <div class="community-footer">
+          <a href="https://webeht.com/" target="_blank" rel="noopener" class="btn-visit" data-i18n="community_visit">
+            Visiter →
+          </a>
+        </div>
+      </div>
+
+      <!-- ELECTROEHT -->
+      <div class="community-card fade-in">
+        <div class="community-header">
+          <img src="assets/electroeht-logo.PNG" alt="ELECTROEHT"
+            class="community-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="community-logo-fallback" style="display:none;"><i class="fas fa-microchip"></i></div>
+          <div class="community-header-text">
+            <h3 data-i18n="community2_name">ELECTROEHT</h3>
+          </div>
+        </div>
+        <p data-i18n="community2_desc">
+          Projet électronique &amp; IoT construit avec des amis, axé sur les systèmes embarqués.
+        </p>
+        <div class="community-footer">
+          <a href="https://electroeht.com/" target="_blank" rel="noopener" class="btn-visit" data-i18n="community_visit">
+            Visiter →
+          </a>
+        </div>
+      </div>
+
+      <!-- Blog-AI Digital -->
+      <div class="community-card fade-in">
+        <div class="community-header">
+          <img src="assets/blogaidigital-logo.webp" alt="Blog-AI Digital"
+            class="community-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="community-logo-fallback" style="display:none;"><i class="fas fa-rss"></i></div>
+          <div class="community-header-text">
+            <h3 data-i18n="community3_name">Blog-AI Digital</h3>
+          </div>
+        </div>
+        <p data-i18n="community3_desc">
+          Blog dédié à l'IA, aux technologies digitales et aux tendances tech.
+        </p>
+        <div class="community-footer">
+          <a href="https://blog-ai.digital/" target="_blank" rel="noopener" class="btn-visit" data-i18n="community_visit">
+            Visiter →
+          </a>
+        </div>
+      </div>
+
+      <!-- M-Coding -->
+      <div class="community-card fade-in">
+        <div class="community-header">
+          <img src="assets/m-coding-logo.png" alt="M-Coding"
+            class="community-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="community-logo-fallback" style="display:none;"><i class="fa-brands fa-whatsapp"></i></div>
+          <div class="community-header-text">
+            <h3 data-i18n="community4_name">M-Coding</h3>
+          </div>
+        </div>
+        <p data-i18n="community4_desc">
+          Chaîne WhatsApp tech avec +500 abonnés — ressources dev, IA et actualités tech.
+        </p>
+        <div class="community-footer">
+          <span class="community-badge" data-i18n="community_followers">+500 abonnés</span>
+          <a href="https://whatsapp.com/channel/0029VagGLaH545uvia1F1308" target="_blank" rel="noopener"
+             class="btn-visit" data-i18n="community_visit">
+            Visiter →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="contact_title">Contact</h2>
+    <div class="contact-grid">
+
+      <div class="slide-left">
+        <div class="contact-info">
+          <h3 data-i18n="contact_subtitle">Travaillons ensemble</h3>
+          <p style="color:var(--text-secondary);margin-bottom:28px;font-size:0.95rem;">
+            Disponible pour des opportunités de stage, CDI ou doctorat.
+          </p>
+          <div class="contact-items">
+
+            <!-- Email (copy on click) -->
+            <div class="contact-item" id="copy-email" title="Click to copy" style="cursor:pointer;">
+              <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-item-text">
+                <span data-i18n="contact_email_label">Email</span>
+                <p>mohamedelamrawi@yahoo.com</p>
+              </div>
+              <span id="copy-tooltip" class="copy-tooltip" data-i18n="contact_copied">Copié !</span>
+              <i class="fas fa-copy" style="color:var(--text-muted);font-size:0.85rem;flex-shrink:0;"></i>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
+              <div class="contact-item-text">
+                <span data-i18n="contact_phone">Téléphone</span>
+                <a href="tel:+212608105946">+212 608 105 946</a>
+              </div>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="contact-item">
+              <div class="contact-item-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="contact-item-text">
+                <span data-i18n="contact_whatsapp">WhatsApp</span>
+                <a href="https://wa.me/212608105946" target="_blank" rel="noopener">+212 608 105 946</a>
+              </div>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div class="contact-item-text">
+                <span>LinkedIn</span>
+                <a href="https://www.linkedin.com/in/el-amraoui-mohamed/" target="_blank" rel="noopener">
+                  linkedin.com/in/el-amraoui-mohamed
+                </a>
+              </div>
+            </div>
+
+            <!-- GitHub -->
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fab fa-github"></i></div>
+              <div class="contact-item-text">
+                <span>GitHub</span>
+                <a href="https://github.com/mohamedelamraoui1" target="_blank" rel="noopener">
+                  github.com/mohamedelamraoui1
+                </a>
+              </div>
+            </div>
+
+            <!-- Freelancer -->
+            <div class="contact-item">
+              <div class="contact-item-icon freelancer"><i class="fas fa-briefcase"></i></div>
+              <div class="contact-item-text">
+                <span data-i18n="contact_freelancer">Freelancer.com</span>
+                <a href="https://www.freelancer.com/u/mohamedelamra" target="_blank" rel="noopener">
+                  freelancer.com/u/mohamedelamra
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact form -->
+      <div class="slide-right">
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label data-i18n="contact_name">Nom complet</label>
+            <input type="text" data-i18n-placeholder="contact_name" placeholder="Nom complet" required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="contact_email_label">Email</label>
+            <input type="email" data-i18n-placeholder="contact_email_label" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="contact_message">Message</label>
+            <textarea data-i18n-placeholder="contact_message" placeholder="Message" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit" data-i18n="contact_send">Envoyer</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ FOOTER -->
+<footer>
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <div class="nav-logo" style="font-size:1.3rem;">Mohamed El Amraoui</div>
+      <p>Ingénieur IA &amp; Data Science. Diplômé MSc Data Science &amp; IA. Ouvert aux jobs ET au doctorat en IA.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-i18n="footer_links">Liens Rapides</h4>
+      <ul>
+        <li><a href="#about"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_about">À propos</span></a></li>
+        <li><a href="#experience"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_experience">Expérience</span></a></li>
+        <li><a href="#projects"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_projects">Projets</span></a></li>
+        <li><a href="#certificates"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_certificates">Certifications</span></a></li>
+        <li><a href="#skills"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_skills">Compétences</span></a></li>
+        <li><a href="#community"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_community">Communauté</span></a></li>
+        <li><a href="#contact"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_contact">Contact</span></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-i18n="footer_networks">Réseaux</h4>
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com/in/el-amraoui-mohamed/" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/mohamedelamraoui1" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/212608105946" target="_blank" rel="noopener" style="color:#25D366;">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+        </li>
+        <li>
+          <a href="https://www.freelancer.com/u/mohamedelamra" target="_blank" rel="noopener">
+            <i class="fas fa-briefcase"></i> Freelancer
+          </a>
+        </li>
+        <li>
+          <a href="mailto:mohamedelamrawi@yahoo.com">
+            <i class="fas fa-envelope"></i> Email
+          </a>
+        </li>
+        <li>
+          <button id="cv-download-btn-footer"
+            onclick="document.getElementById('cv-download-btn').click()"
+            style="background:none;border:none;cursor:pointer;font-family:inherit;font-size:inherit;color:var(--text-muted);display:flex;align-items:center;gap:6px;padding:0;transition:color 0.3s;">
+            <i class="fas fa-file-pdf"></i> Curriculum Vitae
+          </button>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>©&nbsp;<span id="footer-year"></span>&nbsp;<span data-i18n="footer_copy">Mohamed El Amraoui. Tous droits réservés.</span></p>
+    <div class="footer-lang lang-switcher">
+      <button class="lang-btn active" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ar">AR</button>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════════ BACK TO TOP -->
+<button id="back-to-top" aria-label="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="js/translations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
