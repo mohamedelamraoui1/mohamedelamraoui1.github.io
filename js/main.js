@@ -311,29 +311,77 @@ function initCVDownload() {
 }
 
 // ─── Toast ────────────────────────────────────────────────────────────────────
-function showToast(message) {
+function showToast(message, type = "info") {
   const toast = document.getElementById("toast");
   if (!toast) return;
   toast.textContent = message;
-  toast.classList.add("show");
-  setTimeout(() => toast.classList.remove("show"), 3500);
+  // Remove any previous type classes before adding the new one
+  toast.classList.remove("show", "success", "error");
+  // Force a reflow so removing + re-adding "show" triggers the transition
+  void toast.offsetWidth;
+  toast.classList.add(type, "show");
+  setTimeout(() => toast.classList.remove("show", type), 4000);
 }
+
+// ─── EmailJS init ─────────────────────────────────────────────────────────────
+// Called once after DOM is ready; emailjs is loaded synchronously via CDN.
+(function initEmailJS() {
+  if (typeof emailjs !== "undefined") {
+    emailjs.init("PHbSVGglotLCxToai");
+  }
+})();
 
 // ─── Contact Form ─────────────────────────────────────────────────────────────
 function initContactForm() {
   const form = document.getElementById("contact-form");
   if (!form) return;
-  form.addEventListener("submit", (e) => {
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const btn = form.querySelector("button[type=submit]");
-    const original = btn.textContent;
-    btn.textContent = "✓ Envoyé !";
-    btn.style.background = "var(--success)";
-    setTimeout(() => {
-      btn.textContent = translations[currentLang].contact_send;
-      btn.style.background = "";
+
+    const t = translations[currentLang];
+    const nameEl    = document.getElementById("form-name");
+    const emailEl   = document.getElementById("form-email");
+    const subjectEl = document.getElementById("form-subject");
+    const msgEl     = document.getElementById("form-message");
+    const btn       = document.getElementById("form-submit-btn");
+
+    const name    = nameEl.value.trim();
+    const email   = emailEl.value.trim();
+    const subject = subjectEl.value.trim();
+    const message = msgEl.value.trim();
+
+    // Validate — all fields required
+    if (!name || !email || !subject || !message) {
+      showToast(t.form_error_empty, "error");
+      return;
+    }
+
+    // Validate email format
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showToast(t.form_error_email, "error");
+      return;
+    }
+
+    // Disable button and show sending state
+    btn.disabled = true;
+    btn.textContent = t.form_sending;
+
+    try {
+      await emailjs.send("service_q7hik0l", "template_y84lehx", {
+        name,
+        email,
+        subject,
+        message,
+      });
+      showToast(t.form_success, "success");
       form.reset();
-    }, 3000);
+    } catch (_err) {
+      showToast(t.form_error_send, "error");
+    } finally {
+      btn.disabled = false;
+      btn.textContent = t.contact_send;
+    }
   });
 }
 

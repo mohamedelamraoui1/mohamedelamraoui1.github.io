@@ -1044,6 +1044,18 @@ footer {
   transform: translateX(-50%) translateY(0);
 }
 
+#toast.success {
+  border-color: #34d399;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.08);
+}
+
+#toast.error {
+  border-color: #f87171;
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.08);
+}
+
 /* ─── Certificates Section ──────────────────────────────────────────────────── */
 #certificates { background: var(--bg-secondary); }
 

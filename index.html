@@ -25,6 +25,9 @@
 
   <link rel="stylesheet" href="css/style.css" />
 
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <!-- Google Analytics placeholder — replace G-XXXXXXXXXX with your ID -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
 </head>
@@ -811,20 +814,24 @@
 
       <!-- Contact form -->
       <div class="slide-right">
-        <form id="contact-form" class="contact-form">
+        <form id="contact-form" class="contact-form" novalidate>
           <div class="form-group">
-            <label data-i18n="contact_name">Nom complet</label>
-            <input type="text" data-i18n-placeholder="contact_name" placeholder="Nom complet" required />
+            <label for="form-name" data-i18n="contact_name">Nom complet</label>
+            <input id="form-name" type="text" data-i18n-placeholder="contact_name" placeholder="Nom complet" />
           </div>
           <div class="form-group">
-            <label data-i18n="contact_email_label">Email</label>
-            <input type="email" data-i18n-placeholder="contact_email_label" placeholder="Email" required />
+            <label for="form-email" data-i18n="contact_email_label">Email</label>
+            <input id="form-email" type="email" data-i18n-placeholder="contact_email_label" placeholder="Email" />
           </div>
           <div class="form-group">
-            <label data-i18n="contact_message">Message</label>
-            <textarea data-i18n-placeholder="contact_message" placeholder="Message" required></textarea>
+            <label for="form-subject" data-i18n="contact_subject">Sujet</label>
+            <input id="form-subject" type="text" data-i18n-placeholder="contact_subject" placeholder="Sujet" />
           </div>
-          <button type="submit" class="btn-submit" data-i18n="contact_send">Envoyer</button>
+          <div class="form-group">
+            <label for="form-message" data-i18n="contact_message">Message</label>
+            <textarea id="form-message" data-i18n-placeholder="contact_message" placeholder="Message"></textarea>
+          </div>
+          <button type="submit" id="form-submit-btn" class="btn-submit" data-i18n="contact_send">Envoyer</button>
         </form>
       </div>
 
