@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mohamedelamraoui1.github.io/protofialo/sitemap.xml
