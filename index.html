@@ -111,6 +111,7 @@
       <li><a href="#certificates" class="nav-link" data-i18n="nav_certificates">Certifications</a></li>
       <li><a href="#skills"       class="nav-link" data-i18n="nav_skills">Compétences</a></li>
       <li><a href="#community"    class="nav-link" data-i18n="nav_community">Communauté</a></li>
+      <li><a href="#mcoding"      class="nav-link" data-i18n="nav_mcoding">M-Coding</a></li>
       <li><a href="#contact"      class="nav-link" data-i18n="nav_contact">Contact</a></li>
     </ul>
 
@@ -203,10 +204,17 @@
           <img
             src="assets/me.webp"
             alt="Mohamed El Amraoui"
-            class="avatar-photo"
+            class="avatar-photo avatar-photo-main"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
           />
           <span class="avatar-placeholder" style="display:none;">ME</span>
+          <img
+            src="assets/me-2.jpeg"
+            alt=""
+            aria-hidden="true"
+            class="avatar-photo avatar-photo-alt"
+            onerror="this.remove();"
+          />
         </div>
       </div>
     </div>
@@ -286,15 +294,18 @@
           <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="exp1_location">Casablanca, Maroc</span></span>
         </div>
         <ul class="exp-achievements">
-          <li data-i18n="exp1_ach1">GeoAI desktop app pour l'analyse des tolérances ISO-GPS et des empilements</li>
-          <li data-i18n="exp1_ach2">Détection automatisée des interférences de montabilité entre pièces d'assemblage</li>
+          <li data-i18n="exp1_ach1">Application desktop enrichie d'IA pour automatiser la vérification d'assemblages mécaniques et de tolérances ISO-GPS</li>
+          <li data-i18n="exp1_ach2">Visualisateur 3D interactif (OpenCASCADE) et extraction de cotes depuis des plans PDF via vision multimodale Gemini</li>
+          <li data-i18n="exp1_ach3">RAG sur les normes internationales et assistant conversationnel basé sur des Agent Skills</li>
         </ul>
         <div class="tech-stack">
           <span class="tech-badge">Python</span>
+          <span class="tech-badge">PySide6 (Qt)</span>
           <span class="tech-badge">FastAPI</span>
-          <span class="tech-badge">Generative AI</span>
-          <span class="tech-badge">STEP files</span>
-          <span class="tech-badge">PDF Analysis</span>
+          <span class="tech-badge">OpenCASCADE / CadQuery</span>
+          <span class="tech-badge">Gemini Vision</span>
+          <span class="tech-badge">RAG</span>
+          <span class="tech-badge">ChromaDB</span>
         </div>
       </div>
 
@@ -356,9 +367,58 @@
     <div class="projects-grid">
 
       <div class="project-card fade-in">
+        <div class="project-icon"><i class="fas fa-cube"></i></div>
+        <h3 data-i18n="proj0_name">Application Desktop IA — Vérification d'Assemblages</h3>
+        <p data-i18n="proj0_desc">Application desktop enrichie d'IA développée chez Capgemini Engineering pour automatiser la vérification d'assemblages mécaniques et de tolérances industrielles, en remplacement d'un processus manuel Excel.</p>
+        <ul class="exp-achievements">
+          <li data-i18n="proj0_ach1">Visualisateur 3D interactif (OpenCASCADE, CadQuery, OCP) avec navigation, sélection de pièces et prise de mesures sur représentation géométrique exacte (BRep)</li>
+          <li data-i18n="proj0_ach2">Extraction automatique de cotes et tolérances depuis des plans PDF via la vision multimodale de Gemini</li>
+          <li data-i18n="proj0_ach3">RAG interrogeable en langage naturel sur les normes internationales, avec traçabilité des sources</li>
+          <li data-i18n="proj0_ach4">Calcul automatisé de l'accumulation de tolérances (méthodes déterministe et statistique) avec détection d'interférences et verdict de montabilité</li>
+          <li data-i18n="proj0_ach5">Assistant conversationnel basé sur des Agent Skills chargées dynamiquement selon le contexte de l'application</li>
+        </ul>
+        <div class="tech-stack">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">PySide6 (Qt)</span>
+          <span class="tech-badge">FastAPI</span>
+          <span class="tech-badge">OpenCASCADE</span>
+          <span class="tech-badge">Gemini Vision</span>
+          <span class="tech-badge">RAG</span>
+          <span class="tech-badge">ChromaDB</span>
+          <span class="tech-badge">PostgreSQL</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
+        <div class="project-icon"><i class="fas fa-route"></i></div>
+        <h3 data-i18n="proj00_name">Plateforme de Tourisme Intelligent Multi-Agents</h3>
+        <p data-i18n="proj00_desc">Plateforme de tourisme intelligent alimentée par l'IA développée chez Mosaic Mind Solutions, basée sur une architecture multi-agents pour des expériences de voyage personnalisées.</p>
+        <ul class="exp-achievements">
+          <li data-i18n="proj00_ach1">Agent de routage basé sur le Model Context Protocol (MCP) orientant l'utilisateur vers l'agent IA le plus pertinent</li>
+          <li data-i18n="proj00_ach2">Agent d'exploration locale : recherche de lieux à proximité en langage naturel, avec option de selfie devant un monument</li>
+          <li data-i18n="proj00_ach3">Intégration multi-fournisseurs IA (OpenAI, Gemini, Groq, Stability AI) pour le NLU et la génération d'images</li>
+          <li data-i18n="proj00_ach4">Intégration des agents dans le frontend React + TypeScript et l'application mobile Flutter</li>
+        </ul>
+        <div class="tech-stack">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">FastAPI</span>
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">Flutter</span>
+          <span class="tech-badge">MCP</span>
+          <span class="tech-badge">OpenAI</span>
+          <span class="tech-badge">Groq</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-in">
         <div class="project-icon"><i class="fas fa-robot"></i></div>
         <h3 data-i18n="proj1_name">AIMAAK — Chatbot Darija</h3>
-        <p data-i18n="proj1_desc">Application mobile de chatbot en dialecte marocain Darija. Développée pour le concours Injaz Al-Maghrib.</p>
+        <p data-i18n="proj1_desc">Chatbot assistant en Darija conçu pour remplacer un agent de centre d'appels dans le service client de petites startups marocaines sans budget pour un centre d'appels dédié.</p>
+        <ul class="exp-achievements">
+          <li data-i18n="proj1_ach1">Application mobile Flutter intégrant le chatbot AIMAAK, capable de répondre aux clients en Darija</li>
+          <li data-i18n="proj1_ach2">Vidéo de présentation (script, montage) utilisée lors des pitchs devant jury</li>
+          <li data-i18n="proj1_ach3">Travail en équipe pluridisciplinaire : développement technique, communication, business model</li>
+        </ul>
         <div class="tech-stack">
           <span class="tech-badge">Flutter</span>
           <span class="tech-badge">AI</span>
@@ -375,12 +435,17 @@
       <div class="project-card fade-in">
         <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
         <h3 data-i18n="proj2_name">Prédiction du Diabète ML</h3>
-        <p data-i18n="proj2_desc">Modèle de prédiction du diabète sur 100K enregistrements avec une précision de 97,2% en utilisant Random Forest.</p>
+        <p data-i18n="proj2_desc">Système de classification pour prédire la présence de diabète à partir de données médicales et démographiques issues d'un large dataset Kaggle.</p>
+        <ul class="exp-achievements">
+          <li data-i18n="proj2_ach1">Prétraitement : nettoyage, valeurs manquantes, normalisation, gestion du déséquilibre des classes via SMOTE</li>
+          <li data-i18n="proj2_ach2">Implémentation et comparaison de KNN, SVM, Decision Tree et Random Forest</li>
+          <li data-i18n="proj2_ach3">Validation croisée et optimisation des hyperparamètres via GridSearchCV</li>
+        </ul>
         <div class="tech-stack">
           <span class="tech-badge">Python</span>
           <span class="tech-badge">Scikit-learn</span>
           <span class="tech-badge">Random Forest</span>
-          <span class="tech-badge">97.2%</span>
+          <span class="tech-badge">SMOTE</span>
         </div>
         <div class="project-footer">
           <a href="https://github.com/mohamedelamraoui1" target="_blank" rel="noopener" class="btn-github">
@@ -392,7 +457,12 @@
       <div class="project-card fade-in">
         <div class="project-icon"><i class="fas fa-chart-pie"></i></div>
         <h3 data-i18n="proj3_name">Segmentation Clients Bancaires</h3>
-        <p data-i18n="proj3_desc">Segmentation des clients bancaires par clustering K-Means pour l'analyse comportementale.</p>
+        <p data-i18n="proj3_desc">Segmentation de clients bancaires pour comprendre leurs comportements et optimiser les stratégies de marketing ciblé via l'algorithme K-Means.</p>
+        <ul class="exp-achievements">
+          <li data-i18n="proj3_ach1">Analyse exploratoire (EDA) : distributions, détection des outliers, corrélations</li>
+          <li data-i18n="proj3_ach2">Choix du nombre optimal de clusters via Elbow, Silhouette Score et Inertie</li>
+          <li data-i18n="proj3_ach3">Recommandations pour campagnes marketing et fidélisation client</li>
+        </ul>
         <div class="tech-stack">
           <span class="tech-badge">Python</span>
           <span class="tech-badge">Pandas</span>
@@ -787,6 +857,101 @@
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════════════════ M-CODING -->
+<section id="mcoding">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="mcoding_title">M-Coding</h2>
+
+    <div class="mcoding-brand fade-in">
+      <p class="mcoding-quote" data-i18n="mcoding_quote">
+        « I code. I build. I share. I dream beyond limits.<br/>Therefore, I am. »
+      </p>
+      <p class="mcoding-tagline" data-i18n="mcoding_tagline">🚀 AI • Coding • Tech • Resources</p>
+      <p class="mcoding-desc" data-i18n="mcoding_desc">
+        M-Coding est ma marque personnelle dédiée à l'IA, au développement et à la tech —
+        je partage des ressources, des astuces et de l'actualité tech en Darija marocaine et en anglais,
+        à travers plusieurs plateformes.
+      </p>
+    </div>
+
+    <div class="mcoding-grid">
+
+      <a href="https://whatsapp.com/channel/0029VagGLaH545uvia1F1308" target="_blank" rel="noopener" class="mcoding-link-card">
+        <div class="mcoding-link-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="mcoding-link-text">
+          <h4 data-i18n="mcoding_whatsapp_darija">Chaîne WhatsApp</h4>
+          <span>🇲🇦 Darija Morocco</span>
+        </div>
+        <i class="fas fa-arrow-up-right-from-square mcoding-link-arrow"></i>
+      </a>
+
+      <a href="https://whatsapp.com/channel/0029Vb7WRtT11ulGgJPp4m3y" target="_blank" rel="noopener" class="mcoding-link-card">
+        <div class="mcoding-link-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="mcoding-link-text">
+          <h4 data-i18n="mcoding_whatsapp_en">Chaîne WhatsApp</h4>
+          <span>🌍 English</span>
+        </div>
+        <i class="fas fa-arrow-up-right-from-square mcoding-link-arrow"></i>
+      </a>
+
+      <a href="https://instagram.com/m_coding_off" target="_blank" rel="noopener" class="mcoding-link-card">
+        <div class="mcoding-link-icon instagram"><i class="fa-brands fa-instagram"></i></div>
+        <div class="mcoding-link-text">
+          <h4>Instagram</h4>
+          <span>🇲🇦 Darija + 🌍 English</span>
+        </div>
+        <i class="fas fa-arrow-up-right-from-square mcoding-link-arrow"></i>
+      </a>
+
+      <a href="https://facebook.com/mcodingoff" target="_blank" rel="noopener" class="mcoding-link-card">
+        <div class="mcoding-link-icon facebook"><i class="fa-brands fa-facebook-f"></i></div>
+        <div class="mcoding-link-text">
+          <h4>Facebook</h4>
+          <span>🇲🇦 Darija Morocco</span>
+        </div>
+        <i class="fas fa-arrow-up-right-from-square mcoding-link-arrow"></i>
+      </a>
+
+      <a href="https://t.me/mcodingoff" target="_blank" rel="noopener" class="mcoding-link-card">
+        <div class="mcoding-link-icon telegram"><i class="fa-brands fa-telegram"></i></div>
+        <div class="mcoding-link-text">
+          <h4>Telegram</h4>
+          <span>🇲🇦 Darija + 🌍 English</span>
+        </div>
+        <i class="fas fa-arrow-up-right-from-square mcoding-link-arrow"></i>
+      </a>
+
+      <a href="https://x.com/mcoding_off" target="_blank" rel="noopener" class="mcoding-link-card">
+        <div class="mcoding-link-icon x"><i class="fa-brands fa-x-twitter"></i></div>
+        <div class="mcoding-link-text">
+          <h4>X (Twitter)</h4>
+          <span>🌍 English</span>
+        </div>
+        <i class="fas fa-arrow-up-right-from-square mcoding-link-arrow"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/company/m-coding-off/" target="_blank" rel="noopener" class="mcoding-link-card">
+        <div class="mcoding-link-icon linkedin"><i class="fa-brands fa-linkedin-in"></i></div>
+        <div class="mcoding-link-text">
+          <h4>LinkedIn</h4>
+          <span>🌍 English</span>
+        </div>
+        <i class="fas fa-arrow-up-right-from-square mcoding-link-arrow"></i>
+      </a>
+
+      <a href="https://www.reddit.com/user/mcoding_off/" target="_blank" rel="noopener" class="mcoding-link-card">
+        <div class="mcoding-link-icon reddit"><i class="fa-brands fa-reddit-alien"></i></div>
+        <div class="mcoding-link-text">
+          <h4>Reddit</h4>
+          <span>🌍 English</span>
+        </div>
+        <i class="fas fa-arrow-up-right-from-square mcoding-link-arrow"></i>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 <!-- ══════════════════════════════════════════════════════ CONTACT -->
 <section id="contact">
   <div class="container">
@@ -912,6 +1077,7 @@
         <li><a href="#certificates"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_certificates">Certifications</span></a></li>
         <li><a href="#skills"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_skills">Compétences</span></a></li>
         <li><a href="#community"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_community">Communauté</span></a></li>
+        <li><a href="#mcoding"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_mcoding">M-Coding</span></a></li>
         <li><a href="#contact"><i class="fas fa-chevron-right"></i> <span data-i18n="nav_contact">Contact</span></a></li>
       </ul>
     </div>

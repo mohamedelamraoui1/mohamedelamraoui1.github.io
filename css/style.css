@@ -1220,6 +1220,21 @@ html { overflow-x: hidden; max-width: 100vw; }
   display: block;
 }
 
+.avatar-photo-main,
+.avatar-photo-alt {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.45s ease;
+}
+
+.avatar-photo-alt {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.avatar-inner:hover .avatar-photo-main { opacity: 0; }
+.avatar-inner:hover .avatar-photo-alt { opacity: 1; }
+
 /* ─── Toast Notification ────────────────────────────────────────────────────── */
 #toast {
   position: fixed;
@@ -1424,6 +1439,101 @@ html { overflow-x: hidden; max-width: 100vw; }
   color: var(--accent-bright);
   border-color: var(--border-hover);
   background: var(--accent-glow);
+}
+
+/* ─── M-Coding Brand Section ─────────────────────────────────────────────────── */
+.mcoding-brand {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.mcoding-quote {
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.mcoding-tagline {
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--gradient);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+
+.mcoding-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.mcoding-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.mcoding-link-card {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  transition: all var(--transition);
+}
+
+.mcoding-link-card:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-accent);
+}
+
+.mcoding-link-icon {
+  width: 44px; height: 44px; flex-shrink: 0;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; color: #fff;
+  background: var(--gradient);
+}
+
+.mcoding-link-text { flex: 1; min-width: 0; }
+
+.mcoding-link-text h4 {
+  font-size: 0.92rem; font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.mcoding-link-text span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.mcoding-link-arrow {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: color var(--transition);
+}
+
+.mcoding-link-card:hover .mcoding-link-arrow { color: var(--accent-bright); }
+
+.mcoding-link-icon.whatsapp  { background: #25D366; }
+.mcoding-link-icon.instagram { background: linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4); }
+.mcoding-link-icon.facebook  { background: #1877F2; }
+.mcoding-link-icon.telegram  { background: #26A5E4; }
+.mcoding-link-icon.x         { background: #000; }
+.mcoding-link-icon.linkedin  { background: #0A66C2; }
+.mcoding-link-icon.reddit    { background: #FF4500; }
+
+@media (max-width: 600px) {
+  .mcoding-grid { grid-template-columns: 1fr; }
+  .mcoding-quote { font-size: 1rem; }
 }
 
 /* ─── WhatsApp Icon Color ───────────────────────────────────────────────────── */
