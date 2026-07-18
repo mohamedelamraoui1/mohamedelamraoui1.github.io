@@ -163,7 +163,8 @@ const translations = {
 
     // ── M-Coding ─────────────────────────────────────────────────────────
     mcoding_title: "M-Coding",
-    mcoding_quote: "« Je code. Je construis. Je partage. Je rêve au-delà des limites.<br/>Donc je suis. »",
+    mcoding_quote_line1: "« Je code. Je construis. Je partage. Je rêve au-delà des limites.",
+    mcoding_quote_line2: "Donc je suis. »",
     mcoding_tagline: "🚀 IA • Code • Tech • Ressources",
     mcoding_desc: "M-Coding est ma marque personnelle dédiée à l'IA, au développement et à la tech — je partage des ressources, des astuces et de l'actualité tech en Darija marocaine et en anglais, à travers plusieurs plateformes.",
     mcoding_whatsapp_darija: "Chaîne WhatsApp",
@@ -349,7 +350,8 @@ const translations = {
 
     // ── M-Coding ─────────────────────────────────────────────────────────
     mcoding_title: "M-Coding",
-    mcoding_quote: "\"I code. I build. I share. I dream beyond limits.<br/>Therefore, I am.\"",
+    mcoding_quote_line1: "\"I code. I build. I share. I dream beyond limits.",
+    mcoding_quote_line2: "Therefore, I am.\"",
     mcoding_tagline: "🚀 AI • Coding • Tech • Resources",
     mcoding_desc: "M-Coding is my personal brand dedicated to AI, development and tech — I share resources, tips and tech news in Moroccan Darija and English, across multiple platforms.",
     mcoding_whatsapp_darija: "WhatsApp Channel",
@@ -533,7 +535,8 @@ const translations = {
 
     // ── M-Coding ─────────────────────────────────────────────────────────
     mcoding_title: "M-Coding",
-    mcoding_quote: "«أكتب كوداً. أبني. أشارك. أحلم بلا حدود.<br/>إذن أنا موجود.»",
+    mcoding_quote_line1: "«أكتب كوداً. أبني. أشارك. أحلم بلا حدود.",
+    mcoding_quote_line2: "إذن أنا موجود.»",
     mcoding_tagline: "🚀 ذكاء اصطناعي • برمجة • تقنية • موارد",
     mcoding_desc: "M-Coding هي علامتي الشخصية المخصصة للذكاء الاصطناعي والتطوير والتقنية — أشارك موارد ونصائح وأخبار تقنية بالدارجة المغربية والإنجليزية عبر عدة منصات.",
     mcoding_whatsapp_darija: "قناة واتساب",
