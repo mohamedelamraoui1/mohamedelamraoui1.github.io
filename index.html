@@ -85,6 +85,10 @@
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+  <!-- Markdown rendering for the chatbot (parse + sanitize) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+
   <!-- Google Analytics placeholder — replace G-XXXXXXXXXX with your ID -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
 </head>
@@ -1143,7 +1147,8 @@
 <!-- ══════════════════════════════════════════════════════ CHATBOT WIDGET -->
 <div id="chatbot-teaser">
   <button id="chatbot-teaser-close" aria-label="Dismiss"><i class="fas fa-xmark"></i></button>
-  <span data-i18n="chatbot_teaser">💬 Une question ? Discutez avec mon assistant IA plutôt que de tout lire !</span>
+  <i class="fas fa-comment-dots chatbot-teaser-icon"></i>
+  <span data-i18n="chatbot_teaser">Une question ? Discutez avec mon assistant IA plutôt que de tout lire !</span>
 </div>
 
 <button id="chatbot-toggle" aria-label="Open chat with AI assistant">

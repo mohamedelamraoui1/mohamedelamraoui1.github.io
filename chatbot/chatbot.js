@@ -19,17 +19,28 @@
     return (translations[lang] && translations[lang][key]) || translations.fr[key] || "";
   }
 
-  function escapeHtml(str) {
-    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  if (typeof marked !== "undefined") {
+    marked.setOptions({ gfm: true, breaks: true });
   }
 
-  // Minimal, safe markdown: escape everything first, then allow only
-  // **bold** and line breaks through as real tags.
-  function renderInline(text) {
-    let safe = escapeHtml(text);
-    safe = safe.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-    safe = safe.replace(/\n/g, "<br>");
-    return safe;
+  // Full markdown (tables, links, lists, code, bold/italic...) via `marked`,
+  // then sanitized with DOMPurify since this text comes from an LLM and is
+  // rendered as HTML — never trust it as-is.
+  function renderMarkdown(text) {
+    if (typeof marked === "undefined" || typeof DOMPurify === "undefined") {
+      // Fallback if the CDN scripts failed to load: escape only.
+      return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+    const html = marked.parse(text);
+    return DOMPurify.sanitize(html, { ADD_ATTR: ["target"] });
+  }
+
+  function renderBubbleContent(bubble, text) {
+    bubble.innerHTML = renderMarkdown(text);
+    bubble.querySelectorAll("a").forEach((a) => {
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+    });
   }
 
   function scrollToBottom() {
@@ -41,7 +52,7 @@
     const container = document.getElementById("chatbot-messages");
     const bubble = document.createElement("div");
     bubble.className = `chatbot-msg chatbot-msg-${role}`;
-    bubble.innerHTML = renderInline(text);
+    renderBubbleContent(bubble, text);
     container.appendChild(bubble);
     scrollToBottom();
     return bubble;
@@ -114,7 +125,7 @@
                 assistantBubble = addMessageBubble("assistant", "");
               }
               rawText += parsed.content;
-              assistantBubble.innerHTML = renderInline(rawText);
+              renderBubbleContent(assistantBubble, rawText);
               scrollToBottom();
             }
           } catch {
