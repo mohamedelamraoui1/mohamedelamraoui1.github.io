@@ -80,6 +80,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="chatbot/chatbot.css" />
 
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -1139,8 +1140,41 @@
   <i class="fas fa-arrow-up"></i>
 </button>
 
+<!-- ══════════════════════════════════════════════════════ CHATBOT WIDGET -->
+<div id="chatbot-teaser">
+  <button id="chatbot-teaser-close" aria-label="Dismiss"><i class="fas fa-xmark"></i></button>
+  <span data-i18n="chatbot_teaser">💬 Une question ? Discutez avec mon assistant IA plutôt que de tout lire !</span>
+</div>
+
+<button id="chatbot-toggle" aria-label="Open chat with AI assistant">
+  <i class="fas fa-comment-dots icon-chat"></i>
+  <i class="fas fa-xmark icon-close"></i>
+</button>
+
+<div id="chatbot-panel" role="dialog" aria-label="AI assistant chat">
+  <div class="chatbot-header">
+    <div class="chatbot-header-info">
+      <div class="chatbot-avatar"><i class="fas fa-robot"></i></div>
+      <div>
+        <div class="chatbot-title" data-i18n="chatbot_title">Assistant IA</div>
+        <div class="chatbot-status"><span class="dot"></span> <span data-i18n="chatbot_status">En ligne</span></div>
+      </div>
+    </div>
+    <button id="chatbot-close" aria-label="Close chat"><i class="fas fa-xmark"></i></button>
+  </div>
+
+  <div id="chatbot-messages" class="chatbot-messages"></div>
+
+  <div class="chatbot-input-row">
+    <textarea id="chatbot-input" rows="1" data-i18n-placeholder="chatbot_placeholder" placeholder="Posez une question sur Mohamed..."></textarea>
+    <button id="chatbot-send" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+  </div>
+  <div class="chatbot-disclaimer" data-i18n="chatbot_disclaimer">Assistant IA — peut se tromper. Pour toute question importante, contactez Mohamed directement.</div>
+</div>
+
 <!-- Scripts -->
 <script src="js/translations.js"></script>
 <script src="js/main.js"></script>
+<script src="chatbot/chatbot.js"></script>
 </body>
 </html>

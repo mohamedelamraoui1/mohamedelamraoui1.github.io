@@ -192,6 +192,15 @@ const translations = {
     footer_copy: "Mohamed El Amraoui. Tous droits réservés.",
     footer_links: "Liens Rapides",
     footer_networks: "Réseaux",
+
+    // ── Chatbot ──────────────────────────────────────────────────────────
+    chatbot_title: "Assistant IA",
+    chatbot_status: "En ligne",
+    chatbot_placeholder: "Posez une question sur Mohamed...",
+    chatbot_disclaimer: "Assistant IA — peut se tromper. Pour toute question importante, contactez Mohamed directement.",
+    chatbot_greeting: "Bonjour 👋 Je suis l'assistant IA de Mohamed. Posez-moi une question sur son parcours, ses compétences ou ses projets !",
+    chatbot_error: "Oups, une erreur est survenue. Réessayez ou contactez Mohamed directement.",
+    chatbot_teaser: "💬 Une question ? Discutez avec mon assistant IA plutôt que de tout lire !",
   },
 
   en: {
@@ -377,6 +386,15 @@ const translations = {
     footer_copy: "Mohamed El Amraoui. All rights reserved.",
     footer_links: "Quick Links",
     footer_networks: "Networks",
+
+    // ── Chatbot ──────────────────────────────────────────────────────────
+    chatbot_title: "AI Assistant",
+    chatbot_status: "Online",
+    chatbot_placeholder: "Ask a question about Mohamed...",
+    chatbot_disclaimer: "AI assistant — may make mistakes. For anything important, contact Mohamed directly.",
+    chatbot_greeting: "Hi 👋 I'm Mohamed's AI assistant. Ask me anything about his background, skills, or projects!",
+    chatbot_error: "Oops, something went wrong. Please try again or contact Mohamed directly.",
+    chatbot_teaser: "💬 Got a question? Chat with my AI assistant instead of reading everything!",
   },
 
   ar: {
@@ -562,5 +580,14 @@ const translations = {
     footer_copy: "محمد العمراوي. جميع الحقوق محفوظة.",
     footer_links: "روابط سريعة",
     footer_networks: "شبكات التواصل",
+
+    // ── Chatbot ──────────────────────────────────────────────────────────
+    chatbot_title: "مساعد ذكي",
+    chatbot_status: "متصل",
+    chatbot_placeholder: "اطرح سؤالاً عن محمد...",
+    chatbot_disclaimer: "مساعد ذكي — قد يخطئ أحياناً. لأي أمر مهم، تواصل مع محمد مباشرة.",
+    chatbot_greeting: "مرحباً 👋 أنا المساعد الذكي لمحمد. اسألني عن مسيرته أو مهاراته أو مشاريعه!",
+    chatbot_error: "عذراً، حدث خطأ ما. حاول مرة أخرى أو تواصل مع محمد مباشرة.",
+    chatbot_teaser: "💬 لديك سؤال؟ تحدث مع مساعدي الذكي بدلاً من قراءة كل شيء!",
   },
 };
