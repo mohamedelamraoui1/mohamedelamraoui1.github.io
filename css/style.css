@@ -567,6 +567,21 @@ section { padding: 90px 0; }
 
 .exp-header { margin-bottom: 12px; }
 
+.exp-header-logo { display: flex; align-items: center; gap: 12px; }
+
+.exp-logo {
+  width: 44px; height: 44px; flex-shrink: 0;
+  object-fit: contain; padding: 4px;
+  background: #fff; border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.badge-logo {
+  width: 16px; height: 16px;
+  object-fit: contain; border-radius: 50%;
+  background: #fff;
+}
+
 .exp-role {
   font-size: 1rem; font-weight: 700;
   color: var(--text-primary); margin-bottom: 4px;
